@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пошук друзів</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Пошук друзів у соціальних мережах</h1>
+  </header>
+  <div class="container">
+    <div id="auth-form" class="form-container">
+      <input type="text" id="username" placeholder="Ваше ім'я">
+      <button onclick="login()">Увійти</button>
+    </div>
+    <div id="main-content" style="display: none;">
+      <div class="filters">
+        <input type="text" id="search" placeholder="Пошук по імені">
+        <select id="sort">
+          <option value="">Сортувати за</option>
+          <option value="name-asc">Ім'я A-Z</option>
+          <option value="name-desc">Ім'я Z-A</option>
+          <option value="age-asc">Вік ↑</option>
+          <option value="age-desc">Вік ↓</option>
+        </select>
+      </div>
+      <div class="cards" id="user-cards"></div>
+      <div class="pagination" id="pagination"></div>
+      <button onclick="logout()">Вийти</button>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Пошук друзів
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
