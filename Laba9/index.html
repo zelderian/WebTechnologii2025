@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <div class="tabs">
+        <button class="tab-button active" onclick="showForm('signup')">Signup</button>
+        <button class="tab-button" onclick="showForm('login')">Login</button>
+    </div>
+
+    <form id="signup" class="form active" onsubmit="validateSignup(event)">
+        <div class="form-group">
+            <label for="signup-firstname">First Name</label>
+            <input type="text" id="signup-firstname">
+            <small class="form-text" id="signup-firstname-text"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-lastname">Last Name</label>
+            <input type="text" id="signup-lastname">
+            <small class="form-text" id="signup-lastname-text"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email">
+            <small class="form-text" id="signup-email-text"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-password">Password</label>
+            <div class="password-wrapper">
+                <input type="password" id="signup-password">
+                <span class="toggle-password" onclick="togglePassword('signup-password')">👁️</span>
+            </div>
+            <small class="form-text" id="signup-password-text"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-confirm">Confirm Password</label>
+            <div class="password-wrapper">
+                <input type="password" id="signup-confirm">
+                <span class="toggle-password" onclick="togglePassword('signup-confirm')">👁️</span>
+            </div>
+            <small class="form-text" id="signup-confirm-text"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-phone">Phone (Ukraine)</label>
+            <input type="tel" id="signup-phone">
+            <small class="form-text" id="signup-phone-text"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-dob">Date of Birth</label>
+            <input type="date" id="signup-dob">
+            <small class="form-text" id="signup-dob-text"></small>
+        </div>
+
+        <div class="form-group sex-inline">
+            <label>Sex</label>
+            <div class="radio-inline">
+                <label><input type="radio" name="signup-sex" value="male"> Male</label>
+                <label><input type="radio" name="signup-sex" value="female"> Female</label>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="signup-country">Country</label>
+            <select id="signup-country" onchange="populateCities()">
+                <option value="">Select Country</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-city">City</label>
+            <select id="signup-city" disabled>
+                <option value="">Select City</option>
+            </select>
+        </div>
+
+        <button type="submit">Signup</button>
+    </form>
+
+    <form id="login" class="form" onsubmit="validateLogin(event)">
+        <div class="form-group">
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username">
+            <small class="form-text" id="login-username-text"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="login-password">Password</label>
+            <div class="password-wrapper">
+                <input type="password" id="login-password">
+                <span class="toggle-password" onclick="togglePassword('login-password')">👁</span>
+            </div>
+            <small class="form-text" id="login-password-text"></small>
+        </div>
+
+        <div class="form-group checkbox-wrapper">
+            <label for="remember-me">
+                Remember me
+                <input type="checkbox" id="remember-me">
+            </label>
+            <small class="login-validation-message" id="login-validation-message"></small>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
