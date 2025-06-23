@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="web8.css" />
+</head>
+<body>
+    <h1>Memory Pair Game</h1>
+    <button id="restart">Рестарт</button>
+    <div id="settings-block">
+        <h2>Налаштування гри</h2>
+        <label for="player1">Гравець 1:</label>
+        <input type="text" id="player1" value="Гравець 1"><br><br>
+        <label for="player2">Гравець 2:</label>
+        <input type="text" id="player2" value="Гравець 2"><br><br>
+        <label for="difficulty">Складність:</label>
+        <select id="difficulty">
+            <option value="easy">Легко (3 хв)</option>
+            <option value="normal">Нормально (2 хв)</option>
+            <option value="hard">Важко (1 хв)</option>
+        </select><br><br>
+        <label for="rounds">Кількість раундів:</label>
+        <input type="number" id="rounds" value="1" min="1"><br><br>
+        <button id="start">Розпочати гру</button>
+        <button id="reset">Скинути налаштування</button>
+    </div>
+
+    <div id="game-info">
+        <p id="current-player"></p>
+        <p id="moves"></p>
+        <p id="timer"></p>
+    </div>
+
+    <div id="game-board" class="board"></div>
+    <div id="results"></div>
+
+    <script src="web8.js"></script>
+</body>
+</html>
